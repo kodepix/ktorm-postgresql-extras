@@ -1,9 +1,9 @@
 import com.github.benmanes.gradle.versions.updates.*
 
 plugins {
-    alias(libs.plugins.org.jetbrains.kotlin.jvm)
-    alias(libs.plugins.nl.littlerobots.version.catalog.update)
-    alias(libs.plugins.com.github.ben.manes.versions)
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.version.catalog.update)
+    alias(libs.plugins.ben.manes.versions)
 }
 
 group = "io.github.kodepix"
@@ -11,9 +11,11 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
+    implementation(libs.kodepix.commons)
     testImplementation(kotlin("test"))
 }
 
