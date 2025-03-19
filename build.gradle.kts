@@ -1,5 +1,9 @@
+import com.github.benmanes.gradle.versions.updates.*
+
 plugins {
-    kotlin("jvm") version "2.1.10"
+    alias(libs.plugins.org.jetbrains.kotlin.jvm)
+    alias(libs.plugins.nl.littlerobots.version.catalog.update)
+    alias(libs.plugins.com.github.ben.manes.versions)
 }
 
 group = "io.github.kodepix"
@@ -13,9 +17,21 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
-tasks.test {
-    useJUnitPlatform()
+kotlin { jvmToolchain(21) }
+
+tasks {
+    test { useJUnitPlatform() }
+
+    withType<DependencyUpdatesTask> {
+        rejectVersionIf { isNonStable(candidate.version) }
+    }
 }
-kotlin {
-    jvmToolchain(21)
+
+private fun isNonStable(version: String) = run {
+    val versionIsStable = stableKeywords.any { version.uppercase().contains(it) }
+    val isStable = versionIsStable || versionRegex.matches(version)
+    !isStable
 }
+
+private val stableKeywords = listOf("RELEASE", "FINAL", "GA")
+private val versionRegex = Regex("^[0-9,.v-]+(-r)?$")

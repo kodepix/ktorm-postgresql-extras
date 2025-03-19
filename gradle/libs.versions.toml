@@ -1,0 +1,17 @@
+[versions]
+kotlin = "2.1.10"
+
+[libraries]
+org-apache-logging-log4j-log4j-core = "org.apache.logging.log4j:log4j-core:2.24.3"
+org-jetbrains-annotations = "org.jetbrains:annotations:13.0"
+org-jetbrains-kotlin-kotlin-build-tools-impl = { module = "org.jetbrains.kotlin:kotlin-build-tools-impl", version.ref = "kotlin" }
+org-jetbrains-kotlin-kotlin-compiler-embeddable = { module = "org.jetbrains.kotlin:kotlin-compiler-embeddable", version.ref = "kotlin" }
+org-jetbrains-kotlin-kotlin-klib-commonizer-embeddable = { module = "org.jetbrains.kotlin:kotlin-klib-commonizer-embeddable", version.ref = "kotlin" }
+org-jetbrains-kotlin-kotlin-reflect = "org.jetbrains.kotlin:kotlin-reflect:2.0.21"
+org-jetbrains-kotlin-kotlin-scripting-compiler-embeddable = { module = "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable", version.ref = "kotlin" }
+org-jetbrains-kotlin-kotlin-stdlib = "org.jetbrains.kotlin:kotlin-stdlib:2.0.21"
+
+[plugins]
+com-github-ben-manes-versions = "com.github.ben-manes.versions:0.52.0"
+nl-littlerobots-version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.5"
+org-jetbrains-kotlin-jvm = "org.jetbrains.kotlin.jvm:2.1.10"
