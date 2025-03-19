@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.version.catalog.update)
     alias(libs.plugins.ben.manes.versions)
+    alias(libs.plugins.ktlint)
 }
 
 group = "io.github.kodepix"
@@ -21,12 +22,22 @@ dependencies {
 
 kotlin { jvmToolchain(21) }
 
+
+ktlint {
+    verbose = true
+    outputToConsole = true
+}
+
 tasks {
     test { useJUnitPlatform() }
 
     withType<DependencyUpdatesTask> {
         rejectVersionIf { isNonStable(candidate.version) }
     }
+
+    runKtlintCheckOverKotlinScripts { dependsOn(runKtlintFormatOverKotlinScripts) }
+    runKtlintCheckOverMainSourceSet { dependsOn(runKtlintFormatOverMainSourceSet) }
+    runKtlintCheckOverTestSourceSet { dependsOn(runKtlintFormatOverTestSourceSet) }
 }
 
 private fun isNonStable(version: String) = run {
