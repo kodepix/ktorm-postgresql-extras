@@ -1,7 +1,11 @@
 [versions]
 kotlin = "2.1.10"
+ktorm = "4.1.1"
 
 [libraries]
+ktorm-core = { module = "org.ktorm:ktorm-core", version.ref = "ktorm" }
+ktorm-support-postgresql = { module = "org.ktorm:ktorm-support-postgresql", version.ref = "ktorm" }
+hikari = "com.zaxxer:HikariCP:6.0.0"
 kodepix-commons = "io.github.kodepix:commons:1.0-SNAPSHOT"
 
 [plugins]

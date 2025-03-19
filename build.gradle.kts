@@ -16,7 +16,11 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.ktorm.core)
+    implementation(libs.ktorm.support.postgresql)
+    implementation(libs.hikari)
     implementation(libs.kodepix.commons)
+    
     testImplementation(kotlin("test"))
 }
 
