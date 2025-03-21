@@ -1,15 +1,15 @@
 [versions]
-kotlin = "2.1.10"
+kotlin = "2.1.20"
 ktorm = "4.1.1"
 
 [libraries]
+hikari = "com.zaxxer:HikariCP:6.2.1"
+kodepix-commons = "io.github.kodepix:commons:1.0"
 ktorm-core = { module = "org.ktorm:ktorm-core", version.ref = "ktorm" }
 ktorm-support-postgresql = { module = "org.ktorm:ktorm-support-postgresql", version.ref = "ktorm" }
-hikari = "com.zaxxer:HikariCP:6.0.0"
-kodepix-commons = "io.github.kodepix:commons:1.0-SNAPSHOT"
 
 [plugins]
 ben-manes-versions = "com.github.ben-manes.versions:0.52.0"
-version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.5"
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ktlint = "org.jlleitschuh.gradle.ktlint:12.2.0"
+version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.5"

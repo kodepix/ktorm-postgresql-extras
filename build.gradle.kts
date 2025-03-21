@@ -20,8 +20,6 @@ dependencies {
     implementation(libs.ktorm.support.postgresql)
     implementation(libs.hikari)
     implementation(libs.kodepix.commons)
-    
-    testImplementation(kotlin("test"))
 }
 
 kotlin { jvmToolchain(21) }
