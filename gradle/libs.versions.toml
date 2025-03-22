@@ -10,6 +10,8 @@ ktorm-support-postgresql = { module = "org.ktorm:ktorm-support-postgresql", vers
 
 [plugins]
 ben-manes-versions = "com.github.ben-manes.versions:0.52.0"
+dokka = "org.jetbrains.dokka:2.0.0"
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ktlint = "org.jlleitschuh.gradle.ktlint:12.2.0"
+vanniktech-maven-publish = "com.vanniktech.maven.publish:0.31.0"
 version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.5"
