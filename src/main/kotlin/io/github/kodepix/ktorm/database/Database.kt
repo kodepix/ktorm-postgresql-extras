@@ -61,7 +61,7 @@ private data class DataSourceConfig(val datasource: DataSourceConnectionConfig) 
  *
  * @sample io.github.kodepix.ktorm.samples.configureDatabaseWithParamsSample
  */
-fun configureDatabase(url: String, username: String, password: String, onDataSourceConfigured: (DataSource) -> Unit = {}) {
+fun configureDatabase(url: String, username: String, password: String, onDataSourceConfigured: (DataSource) -> Unit = {}) = runUntilSuccess {
 
     db = Database.connect(
         dataSource = HikariDataSource().also {

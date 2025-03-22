@@ -4,7 +4,7 @@ ktorm = "4.1.1"
 
 [libraries]
 hikari = "com.zaxxer:HikariCP:6.2.1"
-kodepix-commons = "io.github.kodepix:commons:1.0"
+kodepix-commons = "io.github.kodepix:commons:2.0"
 ktorm-core = { module = "org.ktorm:ktorm-core", version.ref = "ktorm" }
 ktorm-support-postgresql = { module = "org.ktorm:ktorm-support-postgresql", version.ref = "ktorm" }
 
